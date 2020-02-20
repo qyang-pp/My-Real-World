@@ -16,7 +16,7 @@
 
 
   <view class="images-container">
-     <view wx:for="{{imageList}}" wx:for-item="image" class="image-item item" key="image">
+     <view wx:for="{{imageList}}" wx:for-item="image" class="image-item item" wx:key="image">
        <image mode="aspectFill" class="image" src="{{image}}" bindtap="previewImage" data-src="{{image}}" data-list="{{imageList}}"> </image> 
        <view class="remove-image" bindtap="removeSelectedImage" data-src="{{image}}">x</view>
       </view>

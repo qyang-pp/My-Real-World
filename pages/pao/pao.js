@@ -109,11 +109,13 @@ Page({
     const id =  app.globalData.id;
     const list = wx.getStorageSync('mentions')
     const item = list.find(item => item.id == id)
-    this.setData({
-      id,
-      text: item.des,
-      imageList: item.images
-    })
+    if(item){
+      this.setData({
+        id,
+        text: item.des,
+        imageList: item.images
+      })
+    }
   },
 
   /**
