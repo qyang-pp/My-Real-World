@@ -1,6 +1,24 @@
 <!--pages/message/components/header/header.wxml-->
 <view class="header">
 	<view class="list-icon-container" bindtap="configIconClick">
-		<image class="list-icon" src="../../../../assets/images/list.png"></image>
+		<image class="list-icon" src="/assets/images/list.png"></image>
+	</view>
+</view>
+<view class="main" id="main">
+	<view class="center {{showText ? 'show' : 'hide' }}" id="center">
+		<view class="data-container">
+			<text class="title">精神总结</text>
+			<text class="p">你今天发布了<text class="mark">{{todaySum}}</text>条</text>
+			<text class="p">你本周发布了<text class="mark">{{weekSum}}</text>条</text>
+			<text class="p">你的精神世界一共发布了<text class="mark">{{allSum}}</text> 条</text>
+			<view class="p fa-container"><text class="mark">{{maxDay}}</text> 那天你一共发布了<text class="mark">{{maxDaySum}}</text> 条，那天你一定是特殊的心情吧
+				<image class="fa-icon" src="/assets/images/favorites-red.png"></image>
+			</view>
+			<text class="p"><text class="mark">{{maxDarkTime}}</text> 你深夜发布了一条，你为什么失眠了呢？</text>
+		</view>
+		<view class="return-container" bindtap="onReturn">
+			<image class="return-icon" src="/assets/images/return.png"></image>
+			<text class="return-text">返回</text>
+		</view>
 	</view>
 </view>

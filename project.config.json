@@ -22,7 +22,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.7",
+	"libVersion": "2.9.0",
 	"appid": "wxe131df1b6d2018fe",
 	"projectname": "My-Real-World",
 	"cloudfunctionTemplateRoot": "",
