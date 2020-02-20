@@ -6,7 +6,7 @@
 </view>
 <view class="main" id="main">
 	<view class="center {{showText ? 'show' : 'hide' }}" id="center">
-		<view class="data-container">
+		<view wx:if="{{hasList}}" class="data-container">
 			<text class="title">精神总结</text>
 			<text class="p">你今天发布了<text class="mark">{{todaySum}}</text>条</text>
 			<text class="p">你本周发布了<text class="mark">{{weekSum}}</text>条</text>
@@ -16,9 +16,14 @@
 			</view>
 			<text class="p"><text class="mark">{{maxDarkTime}}</text> 你深夜发布了一条，你为什么失眠了呢？</text>
 		</view>
+		<view wx:if="{{!hasList}}" class="empty-container">
+			<view class="empty-text">欢迎来到</view>
+			<view class="empty-text">我的精神世界</view>
+		</view>
 		<view class="return-container" bindtap="onReturn">
 			<image class="return-icon" src="/assets/images/return.png"></image>
 			<text class="return-text">返回</text>
 		</view>
 	</view>
+
 </view>

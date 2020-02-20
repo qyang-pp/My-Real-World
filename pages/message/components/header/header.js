@@ -12,6 +12,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    hasList: false,
     showText: false,
     animation:'',
     todaySum: 0,
@@ -59,6 +60,11 @@ Component({
       })
     },
     configIconClick: function(){
+      const list = wx.getStorageSync('mentions');
+      const hasList = list.length > 0;
+      this.setData({
+        hasList
+      })
       this.animate('#main',[
         { height: 0},
         { height: '100%'}

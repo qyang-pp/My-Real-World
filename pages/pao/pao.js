@@ -1,17 +1,20 @@
 // pages/pao/pao.js
 const app = getApp()
 import {wxuuid} from '../utils/uuidUtils';
+const initialData = {
+  id:'',
+  imageList:[],
+  text:'',
+  isUploadImage: false,
+  finishUploadImage: false
+}
 
 Page({
 
   /**
    * Page initial data
    */
-  data: {
-      id:'',
-      imageList:[],
-      text:''
-  },
+  data: initialData,
   removeSelectedImage: function(e){
     const src = e.target.dataset.src;
     const imageList = this.data.imageList.filter(item => item !== src);
@@ -69,15 +72,16 @@ Page({
       text:e.detail.value
     })
   },
-
   clickReset: function(){
     this.setData({
       imageList:[],
       text:''
     })
   },
-
   addImage: function(){
+    this.setData({
+      isUploadImage: true
+    })
     let that = this;
     wx.chooseImage({
       count: 6,
@@ -106,42 +110,56 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    const id =  app.globalData.id;
-    const list = wx.getStorageSync('mentions')
-    const item = list.find(item => item.id == id)
-    if(item){
-      this.setData({
-        id,
-        text: item.des,
-        imageList: item.images
-      })
-    }
+    console.log('load....')
   },
 
   /**
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
+    console.log('onReady....')
   },
 
   /**
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    
+    console.log('onShow....')
+    if(this.data.finishUploadImage){
+      return;
+    }
+    const id =  app.globalData.id;
+      const list = wx.getStorageSync('mentions')
+      const item = list.find(item => item.id == id)
+      if(item){
+        this.setData({
+          id,
+          text: item.des,
+          imageList: item.images
+        })
+      }
   },
 
   /**
    * Lifecycle function--Called when page hide
    */
   onHide: function () {
+    if(this.data.isUploadImage){
+      this.setData({
+        isUploadImage: false,
+        finishUploadImage: true
+      })
+    }else {
+      app.globalData.id = ''
+      this.setData(initialData)
+    }
   },
 
   /**
    * Lifecycle function--Called when page unload
    */
   onUnload: function () {
+    console.log('onUnload....')
 
   },
 
