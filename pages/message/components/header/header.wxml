@@ -1,0 +1,6 @@
+<!--pages/message/components/header/header.wxml-->
+<view class="header">
+	<view class="list-icon-container" bindtap="configIconClick">
+		<image class="list-icon" src="../../../../assets/images/list.png"></image>
+	</view>
+</view>

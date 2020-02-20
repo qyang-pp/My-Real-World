@@ -1,0 +1,104 @@
+/* pages/message/components/item/components/user-behaviour/user-behaviour.wxss */
+.icon{
+  width: 20px;
+  height: 20px;
+}
+
+
+.delete-container{
+  width: 0;
+  position: absolute;
+  top:0;
+  right: 0;
+  height: 100%;
+  background-color: rgb(185, 42, 17);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+}
+
+
+.icon-container{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
+@keyframes show-delete-container-ani {
+  from {width: 0;opacity: 0;}
+  to { width: 20%;opacity: 1; }
+}
+
+@keyframes hide-delete-container-ani {
+  from {width: 20%;opacity: 1;}
+  to { width: 0;opacity: 0; }
+}
+
+@keyframes delete-item-container-ani {
+  0% {width: 20%;height:100%; opacity: 1;}
+  50% { width: 100%; height:100%; opacity: 1; }
+  100% { width: 100%; height:0; opacity: 1;}
+}
+
+@keyframes hide-delete-icon-ani {
+  0% {opacity: 1;}
+  50% {opacity: 1; }
+  100% {opacity: 0;}
+}
+
+.hide-delete-icon-ani{
+  animation: hide-delete-icon-ani 1s;
+  animation-fill-mode: forwards;
+}
+
+.delete-item-container-ani{
+  animation: delete-item-container-ani 1s;
+  animation-fill-mode: forwards;
+}
+
+.hide{
+  animation: hide-delete-container-ani 1s;
+  animation-fill-mode: forwards;
+}
+
+.show{
+  animation: show-delete-container-ani 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes show-icon-container-ani {
+  from {width: 0;opacity: 0;}
+  to { width: 100%;opacity: 1; }
+}
+
+@keyframes hide-icon-container-ani {
+  from {width: 100%;opacity: 1;}
+  to { width: 0;opacity: 0; }
+}
+
+.icon-container-hide{
+  animation: hide-icon-container-ani 1s;
+  animation-fill-mode: forwards;
+}
+
+.icon-container-show{
+  animation: show-icon-container-ani 1s;
+  animation-fill-mode: forwards;
+}
+
+.delete-icon{
+  margin-top: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.return-icon{
+  width: 35px;
+  height: 35px;
+}

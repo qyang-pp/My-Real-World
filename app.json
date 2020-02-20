@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/message/message",
+    "pages/pao/pao"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#dd6572",
+    "backgroundColor": "#bcc0c9",
+    "navigationBarTitleText": "我的精神世界",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#444",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/message/message",
+        "text": "bibi",
+        "iconPath": "assets/tabs/message.png",
+        "selectedIconPath": "assets/tabs/message-active.png"
+      },
+      
+      {
+        "pagePath": "pages/pao/pao",
+        "text": "开炮",
+        "iconPath": "assets/tabs/pao.png",
+        "selectedIconPath": "assets/tabs/pao-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

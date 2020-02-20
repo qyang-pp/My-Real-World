@@ -1,0 +1,31 @@
+/* pages/message/components/item/item.wxss */
+
+.item{
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  font-size: 13px;
+  box-shadow: 10px 5px 5px #e1e1e1;
+  border-radius: 5px;
+  position: relative;
+}
+
+.top{
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+}
+
+.info{
+  flex: 1;
+}
+
+.behaviour{
+  width: 30px;
+}
+
+.line {
+  margin: 10px 0;
+  border-top: 1px solid #f1f1f1;
+}
+

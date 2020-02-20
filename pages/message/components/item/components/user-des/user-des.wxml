@@ -1,0 +1,9 @@
+<!--pages/message/components/item/components/user-des/user-des.wxml-->
+<view class="user-des">
+	<view class="des">{{des}}</view>
+	<view class="images-container">
+		<view wx:for="{{images}}" wx:for-item="image" wx:key="image">
+			<image wx:if="{{image}}" mode="aspectFill" bindtap="previewImage" data-src="{{image}}" data-list="{{images}}" class="des-image {{images.length >1 ? 'image-size-fix' : ''}}" src="{{image}}"></image>
+		</view>
+	</view>
+</view>

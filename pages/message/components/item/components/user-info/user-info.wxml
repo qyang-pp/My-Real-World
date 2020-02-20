@@ -1,0 +1,16 @@
+<!--pages/message/components/item/components/user-info/user-info.wxml-->
+<view class="user-info">
+	<image class="avatar-image" src="{{user.avatarUrl}}"></image>
+	<view class="center">
+		<view class="center-top">
+			<view class="name">{{user.nickName}}</view>
+			<view class="address-container">
+				<image class="address-icon" src="/assets/images/region.png"></image>
+				<view class="address-text">{{user.city}}</view>
+			</view>
+		</view>
+		<view class="center-bottom">
+			<view class="time">{{time}}</view>
+		</view>
+	</view>
+</view>

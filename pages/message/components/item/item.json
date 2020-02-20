@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "user-des": "./components/user-des/user-des",
+    "user-info":"./components/user-info/user-info",
+    "user-behaviour":"./components/user-behaviour/user-behaviour"
+  }
+}

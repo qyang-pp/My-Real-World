@@ -1,0 +1,9 @@
+<!--pages/message/components/item/item.wxml-->
+<view class="item">
+	<view class="top">
+		<user-info class="info" user="{{user}}" time="{{item.time}}"></user-info>
+		<user-behaviour class="behaviour" id="{{item.id}}" list="{{item.images}}" bind:onDelete="onDelete" bind:onUpdate="onUpdate"></user-behaviour>
+	</view>
+	<view class="line"></view>
+	<user-des class="des" des="{{item.des}}" images="{{item.images}}"></user-des>
+</view>

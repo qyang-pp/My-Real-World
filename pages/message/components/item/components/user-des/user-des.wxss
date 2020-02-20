@@ -1,0 +1,22 @@
+/* pages/message/components/item/components/user-des/user-des.wxss */
+
+.user-des{
+  width: 100%;
+}
+
+.images-container{
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap
+}
+
+.des-image{
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.image-size-fix{
+  width: 100px; 
+  height: 100px;
+}

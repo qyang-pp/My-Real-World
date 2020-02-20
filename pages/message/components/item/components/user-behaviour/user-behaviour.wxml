@@ -1,0 +1,21 @@
+<!--pages/message/components/item/components/user-behaviour/user-behaviour.wxml-->
+
+<view class="user-behaviour">
+	<view class="icon-container" bindtap="onUpdateIconClick">
+		<image class="icon edit-icon" src="/assets/images/editor.png"></image>
+	</view>
+	<view class="icon-container" bindtap="openDeletePane">
+		<image class="icon delete-icon" src="/assets/images/delete-dark.png"></image>
+	</view>
+</view>
+
+<wxs src="./delete-animation.wxs" module="dm" />
+
+<view class="delete-container {{dm.getDeleteContainerClass(isDeleting, deletePaneToggle, initial)}}">
+	<view class="icon-container">
+		<image class="return-icon {{dm.getDeleteIconClass(isDeleting, deletePaneToggle)}}" src="/assets/images/return.png" bindtap="hideDeletePane"></image>
+	</view>
+	<view class="icon-container">
+		<image bindtap="deleteIconClick" class="delete-icon {{dm.getDeleteIconClass(isDeleting)}}" src="/assets/images/delete.png"></image>
+	</view>
+</view>

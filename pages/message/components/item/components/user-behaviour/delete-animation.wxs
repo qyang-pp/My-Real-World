@@ -1,0 +1,39 @@
+function getDeleteContainerClass(isDeleting, deletePaneToggle, initial){
+  var className = '';
+  if(initial){
+    return '';
+  }
+  if(deletePaneToggle){
+    className = isDeleting ? 'delete-item-container-ani': 'show';
+  }else {
+    className =  'hide';
+  }
+  return className;
+}
+
+function getIconContainerClass(isDeleting, deletePaneToggle){
+  if(deletePaneToggle){
+    if(isDeleting){
+      return 'delete-item-container-ani';
+    }else {
+      return 'icon-container-show';
+    }
+  }else {
+    return 'icon-container-hide';
+  }
+}
+
+
+function getDeleteIconClass(isDeleting){
+  var newClass = '';
+  if(isDeleting){
+    newClass = newClass + ' hide-delete-icon-ani';
+  }
+  return newClass;
+}
+
+
+module.exports.getIconContainerClass = getIconContainerClass;
+
+module.exports.getDeleteContainerClass = getDeleteContainerClass;
+module.exports.getDeleteIconClass = getDeleteIconClass;

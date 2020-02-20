@@ -1,0 +1,8 @@
+<view class="main">
+	<header bind:onReload="onShow"></header>
+	<view class="layout">
+		<view wx:for="{{list}}" class="item" wx:key="id">
+			<item item="{{item}}" user="{{user}}" bind:onDelete="onDelete"></item>
+		</view>
+	</view>
+</view>

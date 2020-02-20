@@ -1,0 +1,126 @@
+/* pages/pao/pao.wxss */
+page{
+  height: 100%;
+}
+.main{
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+}
+
+.config-cotainer{
+  border-bottom: 1px solid #f1f1f1;
+  height: 30px;
+  background-color: #dd6572;
+  color: white;
+}
+
+.config-item-container{
+  width: 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left{
+  float: left;
+}
+
+.right{
+  float: right;
+}
+
+.config-icon{
+  width: 18px;
+  height: 18px;
+}
+
+.layout{
+  overflow-y: scroll;
+  width: 100%;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+.btn{
+  color: rgba(255, 255, 255, 0.623);
+  border: 1px solid rgba(255, 255, 255, 0.623);
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.btn-cancel{
+  float: left;
+}
+.btn-submit{
+  float: right;
+}
+
+.text-container{
+  flex: 1;
+  padding: 10px;
+  font-size: 15px;
+}
+
+textarea{
+  width: 100%;
+  height: 100%;
+}
+
+.images-container{
+  overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #f1f1f1;
+  padding: 3px;
+}
+
+.add-image{
+  color: #8d8a8a;
+  font-size: 40px;
+  line-height: 90px;
+  text-align: center;
+}
+
+.item{
+  border-radius: 10px;
+  border: 1px dashed #8d8a8a;
+  width: 80px;
+  height: 90px;
+  margin: 2px;
+}
+
+.image-item{
+  float: left;
+  border: 4px solid white;
+  border-radius: 0;
+  position: relative;
+}
+
+
+.remove-image{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0,0,0,0.5);
+  color: rgba(255, 255, 255, 0.637);
+  text-align: center;
+  font-size: 12px;
+}
+
+.image{
+  width: 100%;
+  height: 100%;
+}
+
+.reset-icon{
+  width: 15px;
+  height: 15px;
+}
+

@@ -1,0 +1,27 @@
+<!--pages/pao/pao.wxml-->
+<view class="main">
+  <view  class="config-cotainer">
+    <view class="config-item-container left" bindtap="clickReset">
+          <image class="config-icon reset-icon" src="../../assets/images/reset.png"></image>
+    </view>
+    <view class="config-item-container right" bindtap="clickSubmit">
+        <image class="config-icon send-icon" src="../../assets/images/send.png"></image>
+    </view>
+  </view>
+
+<view class="layout">
+  <view class="text-container">
+    <textarea bindinput="textChange" placeholder="吐槽能力聚集中...🌟" name="text" value="{{text}}"></textarea>
+  </view>
+
+
+  <view class="images-container">
+     <view wx:for="{{imageList}}" wx:for-item="image" class="image-item item" key="image">
+       <image mode="aspectFill" class="image" src="{{image}}" bindtap="previewImage" data-src="{{image}}" data-list="{{imageList}}"> </image> 
+       <view class="remove-image" bindtap="removeSelectedImage" data-src="{{image}}">x</view>
+      </view>
+      <view class="add-image item" bindtap="addImage" wx:if="{{imageList.length < 6}}">+</view>
+  </view>
+</view>
+</view>
+
