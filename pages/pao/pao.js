@@ -129,7 +129,7 @@ Page({
       return;
     }
     const id =  app.globalData.id;
-      const list = wx.getStorageSync('mentions')
+      const list = wx.getStorageSync('mentions') || []
       const item = list.find(item => item.id == id)
       if(item){
         this.setData({

@@ -1,5 +1,4 @@
 // pages/message/components/item/components/user-info/user-info.js
-
 Component({
   /**
    * 组件的属性列表

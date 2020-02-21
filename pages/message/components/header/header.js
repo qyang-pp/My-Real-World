@@ -15,12 +15,12 @@ Component({
     hasList: false,
     showText: false,
     animation:'',
-    todaySum: 0,
-    weekSum: 0,
-    allSum: 0,
-    maxDay: '2020/2/2',
-    maxDaySum: 0,
-    maxDarkTime:'2020/2/2 12:12:12'
+    todaySum: 9,
+    weekSum: 22,
+    allSum: 22,
+    maxDay: '2020/2/20',
+    maxDaySum: 9,
+    maxDarkTime:'2020/2/19 02:12:12'
   },
 
   /**

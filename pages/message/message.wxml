@@ -1,8 +1,13 @@
 <view class="main">
 	<header bind:onReload="onShow"></header>
-	<view class="layout">
+	<view class="layout" wx:if="{{hasUserInfo}}">
 		<view wx:for="{{list}}" class="item" wx:key="id">
 			<item item="{{item}}" user="{{user}}" bind:onDelete="onDelete"></item>
 		</view>
+	</view>
+	<view class="get-user-info" wx:if="{{!hasUserInfo}}">
+		<view>
+			<icon class="info-icon"type="info" color="white"></icon></view>
+		<button open-type="getUserInfo" bindtap="getUserInfo" class="get-user-info-button">微信授权登录...</button>
 	</view>
 </view>

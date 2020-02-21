@@ -9,7 +9,8 @@ Page({
    */
   data: {
     user: {},
-    list: []
+    list: [],
+    hasUserInfo: false
   },
   onDelete: function(e){
     const currentId = e.detail.id;
@@ -27,17 +28,51 @@ Page({
       }
     })
   },
+  getUserInfo: function(e) {
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      user: e.detail.userInfo,
+      hasUserInfo: true
+    })
+  },
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    console.log('onload...')
+    const userInfo = app.globalData.userInfo;
+    if (userInfo) {
+      this.setData({
+        user: userInfo,
+        hasUserInfo: true
+      })
+    } else {
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          user: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    } 
+    if(this.data.user){
+      this.getListFromStorage()
+    }
+      
+  },
+  getListFromStorage: function(){
+    const list = wx.getStorageSync('mentions') || [];
+    const timeSortList = timeSort(list);
+    const newList = timeSortList.map(item => ({...item, time: timeFormat(item.time)}))
+    this.setData({
+      list : newList
+    })
   },
 
   /**
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
+    console.log('onReady...')
 
   },
 
@@ -45,21 +80,8 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-      const list = wx.getStorageSync('mentions') || [];
-      const timeSortList = timeSort(list);
-      const newList = timeSortList.map(item => ({...item, time: timeFormat(item.time)}))
-      const user = app.globalData.userInfo;
-      this.setData({
-        user,
-        list : newList
-      })
-      if(!user){
-        setTimeout(() => {
-          this.setData({
-            user: app.globalData.userInfo
-          })
-        }, 1000);
-      }
+    console.log('onShow...')
+    this.getListFromStorage()
     },
 
   /**
